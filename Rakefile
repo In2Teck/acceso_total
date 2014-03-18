@@ -4,4 +4,4 @@
 
 require File.expand_path('../config/application', __FILE__)
 
-TorreCentenario::Application.load_tasks
+AccesoTotal::Application.load_tasks
