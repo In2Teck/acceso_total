@@ -1,6 +1,6 @@
 AccesoTotal::Application.configure do
-  ENV['FACEBOOK_APP_KEY'] = "FACEBOOK APP KEY"
-  ENV['FACEBOOK_APP_SECRET'] = "FACEBOOK APP SECRET"
+  ENV['FACEBOOK_APP_KEY'] = "1398368863767276"
+  ENV['FACEBOOK_APP_SECRET'] = "f961240b2b95d4d05c89706b406e8c76"
   # Settings specified here will take precedence over those in config/application.rb
 
   # In the development environment your application's code is reloaded on
