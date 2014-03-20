@@ -1,4 +1,16 @@
 AccesoTotal::Application.routes.draw do
+  resources :participations
+
+
+  resources :questions
+
+
+  resources :bottles
+
+
+  resources :invites
+
+
   resources :roles
 
   devise_for :users, :controllers => {:omniauth_callbacks => "users/omniauth_callbacks"}
@@ -10,6 +22,12 @@ AccesoTotal::Application.routes.draw do
   end
 
   resources :users
+
+  match 'splash' => "display#splash", :as => :splash 
+  match 'elige_pregunta' => "display#elige_pregunta", :as => :elige_pregunta 
+  match 'invita_amigos' => "display#invita_amigos", :as => :invita_amigos 
+  match 'participar' => "display#participar", :as => :participar 
+  match 'registra_codigo' => "display#registra_codigo", :as => :registra_codigo 
 
 
   # The priority is based upon order of creation:

@@ -12,4 +12,7 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require_tree .
+//= require modernizr.min 
+//= require prefixfree.min
+//= require jquery.simplemodal.min
+//= require util

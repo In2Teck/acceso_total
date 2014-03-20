@@ -1,0 +1,20 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>User:</b>
+  <%= @participation.user_id %>
+</p>
+
+<p>
+  <b>Bottle:</b>
+  <%= @participation.bottle_id %>
+</p>
+
+<p>
+  <b>Question:</b>
+  <%= @participation.question_id %>
+</p>
+
+
+<%= link_to 'Edit', edit_participation_path(@participation) %> |
+<%= link_to 'Back', participations_path %>
