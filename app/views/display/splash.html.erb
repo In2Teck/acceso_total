@@ -4,3 +4,12 @@
 <% content_for :head_style do %>
   <%= stylesheet_link_tag 'splash'%>
 <% end %>
+
+<div class="contenido">
+<form method="get">
+	<p>ANTES DE ENTRAR, VERIFICA TU EDAD</p>
+	<%= date_select('dselect', 'written_on', {use_two_digit_numbers: true, date_separator:'/', order:[:day, :month, :year]} ) %>
+	<%= submit_tag 'Entrar',  :id => "entrar", :onclick => "" %>
+</form>
+
+</div>
