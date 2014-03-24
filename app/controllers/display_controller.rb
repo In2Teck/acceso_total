@@ -12,7 +12,9 @@ class DisplayController < ApplicationController
   
   
   def participar
-	render :partial => 'participar', :content_type => 'json'
+	respond_to do |format|
+		format.json { render :partial => 'participar', :format=>"json" }
+	end
   end
 
   def registra_codigo
@@ -41,20 +43,30 @@ class DisplayController < ApplicationController
         fecha=false
         if (mes>=1) && (mes<=12) then
 			case mes
-			when 1,3,5,7,8,10,12 then
-					max=31
-			when 4,6,9,11 then
-					max=30
-			when 2 then
-				if (es_bisiesto(anio)==true) then
-						max=29
-				else
-						max=28
+				when 1,3,5,7,8,10,12 then
+						max=31
+				when 4,6,9,11 then
+						max=30
+				when 2 then
+					if (es_bisiesto(anio)==true) then
+							max=29
+					else
+							max=28
+					end
+			end
+			
+			if (dia>=1) && (dia<=max)
+				birth = Date.civil(anio, mes, dia)
+				now = Date.today
+				difference_in_days = (now - birth).to_i
+				diff = (difference_in_days/365.25).to_i
+				
+				if diff < 17
+					fecha=true
 				end
 			end
-        end
-        if (dia>=1) && (dia<=max)
-                fecha=true
+        else
+			fecha = false
         end
 	end
   
