@@ -1,3 +1,20 @@
-// Place all the styles related to the display controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+@font-face {
+  font-family: corresponsal;
+  font-style: normal;
+  font-weight: normal;
+  src: url('OPTIVenusLight-Cond.eot'), url('OPTIVenusLight-Cond.ttf') format('truetype');
+}
+
+html {
+	background: url("fondo.jpg");
+  color: white;
+  font-family: corresponsal;
+  height: 900px;
+  width: 1400px;
+}
+
+body {
+	overflow: hidden;
+}
+
+textarea, input { outline: none; }

@@ -1,0 +1,35 @@
+/* #998452 */
+
+.age-div {
+	background-color: rgba(0,0,0,0.7);
+	height: 900px;
+	left: 0;
+	position: absolute;
+	top: 0;
+	width: 1400px;
+}
+
+.age-check {
+	font-size: 3em;
+	text-align: center;
+	padding-top: 150px;
+}
+
+.age-input {
+	font-family: corresponsal;
+	font-size: 0.7em;
+	min-width: 60px;
+	max-width: 120px;
+}
+
+#entrar-btn {
+  background: transparent url("boton_entrar.png");
+  border: none;
+  cursor: pointer;
+  height: 31px;
+  width: 97px;
+}
+
+#entrar-btn:hover {
+  background-image: url("boton_entrar_on.png");
+}

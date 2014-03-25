@@ -6,8 +6,8 @@ gem 'rails', '3.2.11'
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
 gem 'sqlite3'
-gem 'devise'
-gem 'omniauth-facebook'
+gem 'devise', '2.2.4'
+gem 'omniauth-facebook', '1.4.0'
 gem 'cancan'
 
 # Gems used only for assets and not required

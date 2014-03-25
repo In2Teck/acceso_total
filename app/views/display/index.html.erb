@@ -1,0 +1,29 @@
+<% content_for :head_style do %>
+  <%= stylesheet_link_tag "index" %>
+<% end %>
+<% content_for :head_script do %>
+  <%= javascript_include_tag "index" %>
+<% end %>
+<div id="fb-root"></div>
+<section id="main-section">
+  <article>
+  </article>
+</section>
+
+<div class="age-div">
+  <div class="age-check">
+    <p>ANTES DE ENTRAR, VERIFICA TU EDAD</p>
+    <form action="#">
+      <label for="dia">DÍA:</label>
+      <%= select_day(nil, {use_two_digit_numbers: true}, {:class => "age-input", :id => 'dia'}) %>
+      <label for="mes">MES:</label>
+      <%= select_month(nil, {use_two_digit_numbers: true}, {:class => "age-input", :id => 'mes'}) %>
+      <label for="anio">AÑO:</label>
+      <%= select_year(nil, {start_year: 1900, end_year:2014}, {:class => "age-input", :id => 'anio'}) %>
+      <br/>
+    </form>
+    <%= button_tag '', id:"entrar-btn"%>
+  </div>
+</div>
+
+<div id="ruby-values">

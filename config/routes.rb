@@ -23,10 +23,9 @@ AccesoTotal::Application.routes.draw do
 
   resources :users
 
-  match 'splash' => "display#splash", :as => :splash 
+  match 'valida_edad' => "display#valida_edad", :as => :valida_edad
   match 'elige_pregunta' => "display#elige_pregunta", :as => :elige_pregunta 
   match 'invita_amigos' => "display#invita_amigos", :as => :invita_amigos 
-  match 'participar' => "display#participar", :as => :participar 
   match 'registra_codigo' => "display#registra_codigo", :as => :registra_codigo 
 
 
