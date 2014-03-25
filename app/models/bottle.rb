@@ -3,12 +3,8 @@ class Bottle < ActiveRecord::Base
 
   has_one :participation
 
-  def self.valid_code code
-    if Bottle.find_by_code(code)
-      return true
-    else
-      return false
-    end
+  def self.validate_code code
+    return Bottle.find_by_code(code)
   end
 
 end

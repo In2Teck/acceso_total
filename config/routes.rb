@@ -28,6 +28,9 @@ AccesoTotal::Application.routes.draw do
   match 'invita_amigos' => "display#invita_amigos", :as => :invita_amigos 
   match 'registra_codigo' => "display#registra_codigo", :as => :registra_codigo 
 
+  match 'find_or_create_user' => "users#find_or_create_user", :as => :find_or_create_user
+  match 'validate_bottle' => "bottles#validate_bottle", :as => :validate_bottle
+
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

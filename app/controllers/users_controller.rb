@@ -83,4 +83,14 @@ class UsersController < ApplicationController
       format.json { head :no_content }
     end
   end
+
+  def find_or_create_user
+    @user = User.find_or_create_user(params[:email])
+    
+    respond_to do |format|
+      format.json { render json: @user }
+    end
+
+  end
+
 end

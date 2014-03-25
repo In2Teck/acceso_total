@@ -80,4 +80,13 @@ class BottlesController < ApplicationController
       format.json { head :no_content }
     end
   end
+
+  def validate_bottle
+    @bottle = Bottle.validate_code(params[:code])
+    
+    respond_to do |format|
+      format.json { render json: @bottle }
+    end
+
+  end
 end
