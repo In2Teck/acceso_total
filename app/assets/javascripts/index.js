@@ -12,8 +12,9 @@ function onEntrar() {
     data_type: "html",
     success: function(data, textStatus, jqXHR) {
     	$(".age-div").remove();
-  	 $("#main-section").fadeOut(function() {
-        $(this).html(data).slideDown();
+    	//$("#marco").css("display", "block");
+  	 	$("#marco").fadeIn(function() {
+        $("#marco").html(data).slideDown();
       });
     },
     error: function() {
