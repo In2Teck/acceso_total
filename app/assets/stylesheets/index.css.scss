@@ -22,6 +22,46 @@
 	max-width: 120px;
 }
 
+.botella {
+	margin: 0;
+	padding: 0;
+}
+
+.caja2x2	{
+	/*border: solid red 1px;*/
+	height: auto;
+	width: auto;
+}
+
+.contenedor {
+	/*border: solid black 1px;*/
+	font-size: 0;
+	height: auto;
+	position: absolute;
+	right: 150px;
+	top: 10px;
+	width: auto;
+}
+
+.horizontal {
+	display: inline-block;
+	vertical-align: top;
+}
+
+.left {
+	margin-left: -40px;
+}
+
+.logo {
+	margin-left: 190px;
+	margin-top: 55px;
+}
+
+.youtube {
+	height: 310px;
+  width: 400px;
+}
+
 #entrar-btn {
   background: transparent url("boton_entrar.png");
   border: none;
@@ -32,4 +72,18 @@
 
 #entrar-btn:hover {
   background-image: url("boton_entrar_on.png");
+}
+
+#main-section {
+	height: 100%;
+	width: 100%;
+}
+
+#marco {
+	background: rgba(0,0,0,0.5);
+	border: solid #998452 4px;
+	display: none;
+	height: auto;
+	margin-top: 370px;
+	width: auto;
 }
