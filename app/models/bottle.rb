@@ -6,12 +6,12 @@ class Bottle < ActiveRecord::Base
   def self.validate_code code
     if b = Bottle.find_by_code(code)
       if Participation.find_by_bottle_id(b.id)
-        return false
+        return nil 
       else
-        return true
+        return b
       end
     else
-      return false
+      return nil 
     end
   end
 
