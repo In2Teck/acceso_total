@@ -16,7 +16,7 @@
 }
 
 .age-input {
-	font-family: corresponsal;
+	font-family: tradicional;
 	font-size: 0.7em;
 	min-width: 60px;
 	max-width: 120px;
@@ -33,6 +33,18 @@
 	width: auto;
 }
 
+.campo-txt {
+	font-size: 20px;
+	width: 300px;
+}
+
+.codigo-div {
+	font-size: 30px;
+	margin: auto;
+	margin-top: 55px;
+	text-align: center;
+}
+
 .contenedor {
 	/*border: solid black 1px;*/
 	font-size: 0;
@@ -43,9 +55,53 @@
 	width: auto;
 }
 
+.contenedor-div {
+	height: 330px;
+	width: 590px;
+}
+
+.continuar-btn {
+  background: transparent url("boton_continuar.png");
+  border: none;
+  cursor: pointer;
+  height: 30px;
+  width: 116px;
+}
+
+.continuar-btn:hover {
+  background-image: url("boton_continuar_on.png");
+}
+
+.error-txt {
+	color: #998452;
+	font-size: 25px;
+	text-align: center;
+	width: 97%;
+}
+
+.facebook-btn {
+  background: transparent url("boton_participa.png");
+  border: none;
+  cursor: pointer;
+  height: 40px;
+  width: 233px;
+}
+
 .horizontal {
 	display: inline-block;
 	vertical-align: top;
+}
+
+.invitar-btn {
+  background: transparent url("boton_invitar.png");
+  border: none;
+  cursor: pointer;
+  height: 30px;
+  width: 116px;
+}
+
+.invitar-btn:hover {
+  background-image: url("boton_invitar_on.png");
 }
 
 .left {
@@ -57,9 +113,39 @@
 	margin-top: 55px;
 }
 
+.pregunta-div {
+	font-size: 30px;
+	margin: auto;
+	margin-top: 20px;
+	text-align: center;
+}
+
+.pregunta {
+	font-size: 20px;
+	text-align: center;	
+}
+
+.registro {
+	font-size: 30px;
+	height: auto;
+	margin: 15px;
+	text-align: center;
+	vertical-align: middle;
+	width: auto;
+}
+
+.respuesta-txt {
+	font-size: 20px;
+	height: 85px;
+	margin: 20px 0 25px 0;
+	width: 370px;
+}
+
 .youtube {
-	height: 310px;
-  width: 400px;
+	height: 270px;
+	margin: 15px;
+	vertical-align: middle;
+  width: 380px;
 }
 
 #entrar-btn {
@@ -86,4 +172,79 @@
 	height: auto;
 	margin-top: 370px;
 	width: auto;
+}
+
+#n1-btn {
+	background: transparent url("boton_1.png");
+  border: none;
+  cursor: pointer;
+  height: 29px;
+  margin: 10px;
+  width: 30px;
+}
+
+#n1-btn:hover {
+	background: transparent url("boton_1_on.png");
+  border: none;
+  cursor: pointer;
+  height: 29px;
+  margin: 10px;
+  width: 30px;
+}
+
+#n1-btn.down {
+	background: transparent url("boton_1_on.png");
+  border: none;
+  cursor: default;
+  margin: 10px;
+}
+
+#n2-btn {
+	background: transparent url("boton_2.png");
+  border: none;
+  cursor: pointer;
+  height: 29px;
+  margin: 10px;
+  width: 30px;
+}
+
+#n2-btn:hover {
+	background: transparent url("boton_2_on.png");
+  border: none;
+  cursor: pointer;
+  height: 29px;
+  margin: 10px;
+  width: 30px;
+}
+
+#n2-btn.down {
+	background: transparent url("boton_2_on.png");
+  border: none;
+  cursor: default;
+  margin: 10px;
+}
+
+#n3-btn {
+	background: transparent url("boton_3.png");
+  border: none;
+  cursor: pointer;
+  height: 29px;
+  margin: 10px;
+  width: 30px;
+}
+
+#n3-btn:hover {
+	background: transparent url("boton_3_on.png");
+  border: none;
+  cursor: pointer;
+  height: 29px;
+  margin: 10px;
+  width: 30px;
+}
+
+#n3-btn.down {
+	background: transparent url("boton_3_on.png");
+  border: none;
+  cursor: default;
+  margin: 10px;
 }

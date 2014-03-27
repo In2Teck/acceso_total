@@ -4,7 +4,7 @@ class CreateParticipations < ActiveRecord::Migration
       t.integer :user_id
       t.integer :bottle_id
       t.integer :question_id
-
+      t.text	:answer
       t.timestamps
     end
     add_index :participations, :bottle_id, :unique => true

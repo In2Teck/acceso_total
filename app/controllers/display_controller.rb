@@ -10,11 +10,19 @@ class DisplayController < ApplicationController
   end
 
   def elige_pregunta
-
+  	@code = params[:code]
+  	@questions = Question.all()
+  	render :partial => 'elige_pregunta', :content_type => 'text/html'
   end
 
-  def invita_amigos
-
+  def registra_participacion
+  	@participacion = Participation.new
+  	@participacion.user_id = current_user.id
+  	@participacion.bottle_id = params[:code]
+  	@participacion.question_id = params[:question]
+  	@participacion.answer = params[:answer]
+  	@participacion.save
+  	render :partial => 'registra_participacion', :content_type => 'text/html'
   end
   
 	def valida_edad

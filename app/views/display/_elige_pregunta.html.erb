@@ -1,0 +1,16 @@
+<div class="contenedor-div">
+	<div class="pregunta-div">
+		<div> ELIGE UNA PREGUNTA </div>
+		<div>
+			<%= button_tag '', :id => "n1-btn", :class => "horizontal", :onclick => "cambiaPregunta(1)" %>
+			<%= button_tag '', :id => "n2-btn", :class => "horizontal", :onclick => "cambiaPregunta(2)" %>
+			<%= button_tag '', :id => "n3-btn", :class => "horizontal", :onclick => "cambiaPregunta(3)" %>
+		</div>
+		<div class="pregunta"></div>
+		<%= text_area_tag 'respuesta', nil, class: "respuesta-txt" %>
+		<br/>
+		<%= button_tag '', :class => "continuar-btn", :onclick => "registraParticipacion()" %>
+	</div>
+</div>
+
+<div id="ruby-values" data-code="<%= @code %>" data-questions="<%= @questions.to_json%>">

@@ -25,7 +25,7 @@ AccesoTotal::Application.routes.draw do
 
   match 'valida_edad' => "display#valida_edad", :as => :valida_edad
   match 'elige_pregunta' => "display#elige_pregunta", :as => :elige_pregunta 
-  match 'invita_amigos' => "display#invita_amigos", :as => :invita_amigos 
+  match 'registra_participacion' => "display#registra_participacion", :as => :registra_participacion 
   match 'registra_codigo' => "display#registra_codigo", :as => :registra_codigo 
 
   match 'find_or_create_user' => "users#find_or_create_user", :as => :find_or_create_user
