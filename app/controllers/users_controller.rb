@@ -86,11 +86,7 @@ class UsersController < ApplicationController
 
   def find_or_create_user
     @user = User.find_or_create_user(params[:email])
-    
-    respond_to do |format|
-      format.json { render json: @user }
-    end
-
+    render :partial => 'display/registra_codigo', :content_type => 'text/html'
   end
 
 end

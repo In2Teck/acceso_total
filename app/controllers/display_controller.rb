@@ -17,7 +17,7 @@ class DisplayController < ApplicationController
 
   def registra_participacion
   	@participacion = Participation.new
-  	@participacion.user_id = current_user.id
+  	@participacion.user_id = params[:user]
   	@participacion.bottle_id = params[:code]
   	@participacion.question_id = params[:question]
   	@participacion.answer = params[:answer]

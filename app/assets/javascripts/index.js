@@ -1,4 +1,5 @@
 var question;
+var user;
 
 $(document).on("ready", onReady);
 
@@ -8,7 +9,7 @@ function onReady() {
 }
 
 function onEntrar() {
-	 $.ajax({
+	$.ajax({
     type: "GET",
     url: "/valida_edad",
     data: {"dia": $("#dia").val(), "mes": $("#mes").val(), "anio": $("#anio").val()},
@@ -25,12 +26,26 @@ function onEntrar() {
 }
 
 function loginEmail() {
-
+	$.ajax({
+    type: "GET",
+    url: "/find_or_create_user",
+    data: {"email": $("#email").val()},
+    data_type: "html",
+    success: function(data, textStatus, jqXHR) {
+    	$("#marco").fadeIn(function() {
+		    $("#marco").html(data).slideDown();
+		    user = $("#user").data("id");
+		  });
+    },
+    error: function() {
+    } 
+  });
 }
 
 function onParticipar(event, values) {
 	$("#marco").fadeIn(function() {
     $("#marco").html(values).slideDown();
+    user = $("#user").data("id");
   });
 }
 
@@ -94,7 +109,7 @@ function registraParticipacion() {
 	$.ajax({
    	type: "GET",
    	url: "/registra_participacion",
-   	data: {"code": $("#ruby-values").data("code"), "question": question, "answer": $("#respuesta").val()},
+   	data: {"code": $("#ruby-values").data("code"), "question": question, "answer": $("#respuesta").val(), "user": user},
    	data_type: "html",
    	success: function(data, textStatus, jqXHR) {
     	$("#marco").fadeIn(function() {
@@ -104,5 +119,3 @@ function registraParticipacion() {
   	error: function() {} 
   });
 }
-
-//E7D2296F
