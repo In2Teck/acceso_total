@@ -12,7 +12,7 @@ AccesoTotal::Application.configure do
   config.assets.paths << Rails.root.join('app', 'assets', 'fonts')
 
   # Precompile additional assets
-  config.assets.precompile += %w( .svg .eot .woff .ttf )
+  config.assets.precompile += %w( .svg .eot .woff .ttf .otf )
 
   # Disable Rails's static asset server (Apache or nginx will already do this)
   config.serve_static_assets = false
@@ -66,6 +66,8 @@ AccesoTotal::Application.configure do
 
   # Send deprecation notices to registered listeners
   config.active_support.deprecation = :notify
+
+  config.assets.paths << Rails.root.join('app', 'assets', 'fonts') << Rails.root.join('vendor', 'assets', 'fonts')
 
   # Log the query plan for queries taking more than this (works
   # with SQLite, MySQL, and PostgreSQL)
