@@ -15,9 +15,9 @@ function onEntrar() {
     data: {"dia": $("#dia").val(), "mes": $("#mes").val(), "anio": $("#anio").val()},
     data_type: "html",
     success: function(data, textStatus, jqXHR) {
-    	$(".age-div").remove();
-  	 	$("#marco").fadeIn(function() {
-        $("#marco").html(data).slideDown();
+    	$(".age-div").fadeOut("slow", function() {
+        $("#marco-div").html(data);
+        $("#marco").fadeIn("slow");  
       });
     },
     error: function() {
@@ -32,8 +32,8 @@ function loginEmail() {
     data: {"email": $("#email").val()},
     data_type: "html",
     success: function(data, textStatus, jqXHR) {
-    	$("#marco").fadeIn(function() {
-		    $("#marco").html(data).slideDown();
+    	$("#marco-div").fadeOut("slow", function() {
+		    $("#marco-div").html(data).fadeIn("slow");
 		    user = $("#user").data("id");
 		  });
     },
@@ -43,8 +43,8 @@ function loginEmail() {
 }
 
 function onParticipar(event, values) {
-	$("#marco").fadeIn(function() {
-    $("#marco").html(values).slideDown();
+	$("#marco-div").fadeOut("slow", function() {
+    $("#marco-div").html(values).fadeIn("slow");
     user = $("#user").data("id");
   });
 }
@@ -65,8 +65,8 @@ function validaCodigo() {
 			    data: {"code": result.id},
 			    data_type: "html",
 			    success: function(data, textStatus, jqXHR) {
-			    	$("#marco").fadeIn(function() {
-				    	$("#marco").html(data).slideDown();
+			    	$("#marco-div").fadeOut("slow", function() {
+				    	$("#marco-div").html(data).fadeIn("slow");
 				  	});
 			    },
 			    error: function() {
@@ -112,10 +112,18 @@ function registraParticipacion() {
    	data: {"code": $("#ruby-values").data("code"), "question": question, "answer": $("#respuesta").val(), "user": user},
    	data_type: "html",
    	success: function(data, textStatus, jqXHR) {
-    	$("#marco").fadeIn(function() {
-	    	$("#marco").html(data).slideDown();
+    	$("#marco-div").fadeOut("slow", function() {
+	    	$("#marco-div").html(data).fadeIn("slow", function(){
+          publishEntry();
+        });
 	  	});
   },
   	error: function() {} 
   });
+}
+
+function invitarAmigos() {
+  FB.ui({
+    method: 'apprequests', message: 'Participa en Acceso Total de Jose Cuervo Tradicional® para ganar un viaje todo pagado a Cannes, Francia',
+  }, function(response){console.log(response)});
 }

@@ -77,9 +77,9 @@ function login() {
 function publishEntry() {
   FB.ui({
     method: 'feed',
-    name: 'CORRESPONSAL TRADICIONAL', 
-    description: 'Ya grabé mi video para ser EL CORRESPONSAL TRADICIONAL® por Cuervo Tradicional® y viajar a Berlín ¡participa AQUÍ!',
-    link: 'http://www.facebook.com/jctradicional/app_430024737107497',
+    name: 'ACCESO TOTAL TRADICIONAL®', 
+    description: 'Ya estoy concursando para ir a Cannes, Francia con Cuervo Tradicional® ¡Participa AQUÍ!',
+    link: 'http://accesototaltradicional.com',
     picture: 'http://apps.t2omedia.com.mx/assets/post_wall.jpg'
   });
 }

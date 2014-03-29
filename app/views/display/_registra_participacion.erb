@@ -1,8 +1,13 @@
 <div class="contenedor-div">
-	<div class="pregunta-div">
+	<div class="participacion-div">
 		<div> ¡GRACIAS POR PARTICIPAR! </div>
-		<div> INVITA </div>
-		<br/>
-		<%= button_tag '', :class => "invitar-btn", :onclick => "invitarAmigos()" %>
+		<% if current_user %>
+			<br/>
+			<div class="invita-div"> INVITA A TODOS LOS AMIGOS QUE PUEDAS Y TENDRÁS MÁS OPORTUNIDADES DE GANAR.</div>
+			<br/>
+			<%= button_tag '', :class => "invitar-btn", :onclick => "invitarAmigos()" %>
+		<% else %>
+			<div> NO TIENE FACEBOOK </div>
+		<% end %>
 	</div>
 </div>
