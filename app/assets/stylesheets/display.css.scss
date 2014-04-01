@@ -7,12 +7,16 @@
 
 html {
 	background: url("fondo.jpg");
-  background-size: 105%;
+  background-size: cover;
   background-repeat: no-repeat;
   color: white;
   font-family: tradicional;
-  height: 900px;
-  width: 1400px;
+  height: 100%;
+  width: 100%;
+  min-height: 900px;
+  min-width: 1400px;
+  overflow-x: hidden;
+  overflow-y: auto;
 }
 
 body {

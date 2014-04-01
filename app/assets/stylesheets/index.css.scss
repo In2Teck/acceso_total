@@ -2,11 +2,13 @@
 
 .age-div {
 	background-color: rgba(0,0,0,0.7);
-	height: 900px;
-	left: 0;
-	position: absolute;
-	top: 0;
-	width: 1400px;
+  background-size: 100% auto;
+	height: 100%;
+	width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  min-height: 900px;
 }
 
 .age-check {
@@ -25,6 +27,10 @@
 .botella {
 	margin: 0;
 	padding: 0;
+}
+
+.botella img{
+  height: 800px;
 }
 
 .caja2x2	{
@@ -111,12 +117,11 @@
 }
 
 .left {
-	margin-left: -40px;
+	margin-left: 70%;
 }
 
 .logo {
-	margin-left: 190px;
-	margin-top: 55px;
+	margin: 2.5em auto auto 10%;
 }
 
 .participacion-div {
@@ -260,4 +265,27 @@
   border: none;
   cursor: default;
   margin: 10px;
+}
+
+@media screen and (max-width: 900px) { 
+
+  .age-check {
+  	font-size: 1.8em;
+    width: 80%;
+    margin: auto auto auto 1em;
+  }
+
+  .left {
+  	margin-left: 95%;
+  }
+
+  .logo {
+	  margin: 2.5em auto auto 10px;
+  }
+
+  .logo_image{
+    width: 180px;
+    height: auto;
+  }
+
 }

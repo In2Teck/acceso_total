@@ -7,7 +7,7 @@
 <div id="fb-root"></div>
 <section id="main-section">
   <figure class="logo">
-    <%= image_tag("logo.png") %>
+    <%= image_tag"logo.png", :class => 'logo_image' %>
   </figure>
   
   <div class="contenedor">
@@ -16,7 +16,7 @@
     </div>
     <div class="caja2x2 horizontal left">
       <figure class="botella">
-        <%= image_tag("botella.png") %>
+        <%= image_tag("botella.png")%>
       </figure>
     </div>
   </div>
@@ -24,6 +24,7 @@
 
 <div class="age-div">
   <div class="age-check">
+    <br/>
     <p>ANTES DE ENTRAR, VERIFICA TU EDAD</p>
     <form action="#">
       <label for="dia">DÍA:</label>
@@ -38,4 +39,4 @@
   </div>
 </div>
 
-<div id="ruby-values">
+<div id="ruby-values"></div>
