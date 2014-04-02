@@ -1,27 +1,29 @@
-<h1>Listing participations</h1>
-
-<table>
-  <tr>
-    <th>User</th>
-    <th>Bottle</th>
-    <th>Question</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
-
-<% @participations.each do |participation| %>
-  <tr>
-    <td><%= participation.user_id %></td>
-    <td><%= participation.bottle_id %></td>
-    <td><%= participation.question_id %></td>
-    <td><%= link_to 'Show', participation %></td>
-    <td><%= link_to 'Edit', edit_participation_path(participation) %></td>
-    <td><%= link_to 'Destroy', participation, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-  </tr>
+<% content_for :head_script do %>
+  <%= javascript_include_tag "participations" %>
 <% end %>
-</table>
 
-<br />
+<section>
+    <h2>Reporte de Respuestas</h2>
+    <%= will_paginate @participations, :previous_label => ApplicationHelper::PREV_LBL, :next_label => ApplicationHelper::NEXT_LBL %>
+    <table class="table table-striped table-bordered responsive">
+      <tr>
+        <th><%= sortable "pregunta", "Pregunta" %></th>
+        <th><%= sortable "respuesta", "Respuesta" %></th>
+        <th><%= sortable "codigo", "Código" %></th>
+        <th><%= sortable "email", "Autor" %></th>
+        <th><%= sortable "fecha", "Fecha" %></th>
+      </tr>
 
-<%= link_to 'New Participation', new_participation_path %>
+    <% @participations.each do |participation| %>
+      <tr>
+        <td><%= participation.pregunta %></td>
+        <td><%= participation.respuesta %></td>
+        <td><%= participation.codigo %></td>
+        <td><%= participation.email %></td>
+        <td class="centered"><%= participation.created_at.in_time_zone("Mexico City").strftime("%h %d %Y") %></td>
+      </tr>
+    <% end %>
+    </table>
+</section>
+
+

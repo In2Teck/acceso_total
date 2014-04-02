@@ -2,10 +2,10 @@ class ParticipationsController < ApplicationController
   # GET /participations
   # GET /participations.json
   def index
-    @participations = Participation.all
+    @participations = Participation.find_by_sql("SELECT users.email, participations.id, participations.user_id, participations.created_at as fecha, participations.answer as respuesta, bottles.code as codigo, questions.name as pregunta, participations.created_at FROM participations LEFT OUTER JOIN users ON participations.user_id = users.id LEFT OUTER JOIN bottles ON participations.bottle_id = bottles.id LEFT OUTER JOIN questions ON participations.question_id = questions.id ORDER BY #{sort_column} #{sort_direction}").paginate(:page => params[:page])
 
     respond_to do |format|
-      format.html # index.html.erb
+      format.html { render layout: "admin" }
       format.json { render json: @participations }
     end
   end

@@ -5,10 +5,9 @@ class UsersController < ApplicationController
   # GET /users
   # GET /users.json
   def index
-    @users = User.all
-
+    @users = User.find_by_sql("SELECT users.id, users.uid, users.first_name, users.last_name, users.email, users.created_at as fecha, SUM(participations.id is not null) as respuestas FROM users LEFT OUTER JOIN participations ON users.id = participations.user_id WHERE users.id != 1 GROUP BY users.id ORDER BY #{sort_column} #{sort_direction}").paginate(:page => params[:page])
     respond_to do |format|
-      format.html # index.html.erb
+      format.html {render layout: "admin"}
       format.json { render json: @users }
     end
   end
@@ -87,6 +86,13 @@ class UsersController < ApplicationController
   def find_or_create_user
     @user = User.find_or_create_user(params[:email])
     render :partial => 'display/registra_codigo', :content_type => 'text/html'
+  end
+
+  def get_participations
+    @participations = Participation.where("user_id = ?", params[:user_id]).includes(:bottle, :question)
+    respond_to do |format|
+      format.json { render :json => @participations, :include => [:question, :bottle]}
+    end
   end
 
 end
