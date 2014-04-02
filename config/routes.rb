@@ -21,7 +21,9 @@ AccesoTotal::Application.routes.draw do
 	  get 'signup', :to => "devise/registrations#new"
   end
 
-  resources :users
+  resources :users do
+    match 'get_participations'
+  end
 
   match 'valida_edad' => "display#valida_edad", :as => :valida_edad
   match 'elige_pregunta' => "display#elige_pregunta", :as => :elige_pregunta 
@@ -31,6 +33,9 @@ AccesoTotal::Application.routes.draw do
   match 'find_or_create_user' => "users#find_or_create_user", :as => :find_or_create_user
   match 'validate_bottle' => "bottles#validate_bottle", :as => :validate_bottle
 
+  match 'admin' => 'admin#index', :as => :admin
+
+  match 'admin/logout', :to => "admin#logout", :as => :admin_logout
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
