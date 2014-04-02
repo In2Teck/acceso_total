@@ -86,7 +86,11 @@ class UsersController < ApplicationController
 
   def find_or_create_user
     @user = User.find_or_create_user(params[:email])
-    render :partial => 'display/registra_codigo', :content_type => 'text/html'
+    if @user.id
+      render :partial => 'display/registra_codigo', :content_type => 'text/html'
+    else
+      render status: 500
+    end
   end
 
 end

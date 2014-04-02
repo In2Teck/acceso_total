@@ -38,6 +38,7 @@ function loginEmail() {
 		  });
     },
     error: function() {
+      $("#mensaje_error_correo").text("CORREO INVÁLIDO");
     } 
   });
 }

@@ -7,7 +7,7 @@
 		<br/><br/>
 		<div> Ó INGRESA TU E-MAIL: </div>
 		<%= text_field_tag 'email', nil, class: "campo-txt" %>
-		<br/><br/>
+    <div id="mensaje_error_correo"></div>
 		<%= button_tag '', :class=>"continuar-btn", :onclick => "loginEmail()" %>
 	</div>
 </div>

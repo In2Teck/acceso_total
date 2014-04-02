@@ -156,7 +156,7 @@
 	margin: 10px;
 	text-align: center;
 	vertical-align: middle;
-	width: 38%;
+	width: 36%;
 }
 
 .respuesta-txt {
@@ -200,6 +200,12 @@
 	width: 730px;
 }
 
+#mensaje_error_correo{
+  height: 1.5em;
+  width: 100%;
+  margin-top: 5px;
+  color: #998452;
+}
 
 .caja {
   background-color: rgba(0,0,0,0.7);
@@ -354,22 +360,34 @@
   }
 
   .codigo-div {
-	  font-size: 22px;
+	  font-size: 23px;
+    width: 95%;
   }
 
   .error-txt {
-	  font-size: 22px;
+	  font-size: 23px;
+    width: 95%;
   }
 
   .caja {
     top: 155px;
-    left: 38%;
+    left: 55%;
     font-size: 17px;
     padding: 8px;
-    width: 53%;
-    min-width: 280px;
+    width: 35%;
+    min-width: 220px;
     text-align: left;
     height: 41px;
+  }
+
+}
+
+@media screen and (max-width:400px) {
+  
+  .caja {
+    left: 46%;
+    width: 42%;
+    min-width: 178px;
   }
 
 }
