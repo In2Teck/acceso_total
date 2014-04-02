@@ -111,20 +111,34 @@ function cambiaPregunta(value) {
 }
 
 function registraParticipacion() {
-	$.ajax({
-   	type: "GET",
-   	url: "/registra_participacion",
-   	data: {"code": $("#ruby-values").data("code"), "question": question, "answer": $("#respuesta").val(), "user": user},
-   	data_type: "html",
-   	success: function(data, textStatus, jqXHR) {
-    	$("#marco-div").fadeOut("slow", function() {
-	    	$("#marco-div").html(data).fadeIn("slow", function(){
-          publishEntry();
+  if ($("#respuesta").val().length > 0) {
+    $.ajax({
+      type: "GET",
+      url: "/registra_participacion",
+      data: {"code": $("#ruby-values").data("code"), "question": question, "answer": $("#respuesta").val(), "user": user},
+      data_type: "html",
+      success: function(data, textStatus, jqXHR) {
+        $("#marco-div").fadeOut("slow", function() {
+          $("#marco-div").html(data).fadeIn("slow", function(){
+            publishEntry();
+          });
         });
-	  	});
-  },
-  	error: function() {} 
-  });
+    },
+      error: function() {} 
+    });
+  } else {
+    alert("Favor de llenar el campo de respuesta.");
+    /*$('<div id="dialog" title="Atención"><p>Favor de llenar el campo de respuesta.</p></div>').appendTo('body');    	
+
+		$("#dialog").dialog({
+            width: 300,
+            height: 150,
+            modal: true,
+            close: function(event, ui) {
+                $("#dialog").hide();
+            }
+    });*/
+  }
 }
 
 function invitarAmigos() {
