@@ -1,5 +1,14 @@
 /* #998452 */
 
+#izq {
+  width: 70%;
+}
+
+#der {
+  width: 30%;
+  margin: -180px auto auto auto;
+}
+
 .age-div {
 	background-color: rgba(0,0,0,0.7);
   background-size: 100% auto;
@@ -41,7 +50,8 @@
 
 .campo-txt {
 	font-size: 20px;
-	width: 300px;
+	width: 75%;
+  max-width: 300px;
 }
 
 .codigo-div {
@@ -55,15 +65,13 @@
 	/*border: solid black 1px;*/
 	font-size: 0;
 	height: auto;
-	position: absolute;
-	right: 150px;
 	top: 10px;
-	width: auto;
+	width: 100%;
 }
 
 .contenedor-div {
 	height: 330px;
-	width: 590px;
+	width: auto;
 }
 
 .continuar-btn {
@@ -87,6 +95,9 @@
 
 .facebook-btn {
   background: transparent url("boton_participa.png");
+  background-size: 90% 90%;
+  background-repeat: no-repeat;
+  background-position:center;
   border: none;
   cursor: pointer;
   height: 40px;
@@ -116,10 +127,6 @@
   background-image: url("boton_invitar_on.png");
 }
 
-.left {
-	margin-left: 70%;
-}
-
 .logo {
 	margin: 2.5em auto auto 10%;
 }
@@ -146,10 +153,10 @@
 .registro {
 	font-size: 30px;
 	height: auto;
-	margin: 15px;
+	margin: 10px;
 	text-align: center;
 	vertical-align: middle;
-	width: auto;
+	width: 38%;
 }
 
 .respuesta-txt {
@@ -161,9 +168,9 @@
 
 .youtube {
 	height: 270px;
-	margin: 15px;
+	margin: 10px;
 	vertical-align: middle;
-  width: 380px;
+  width: 55%;
 }
 
 #entrar-btn {
@@ -188,8 +195,8 @@
 	border: solid #998452 4px;
 	display: none;
 	height: auto;
-	margin-top: 370px;
-	width: auto;
+	margin: 110px -40px auto auto;
+	width: 730px;
 }
 
 #n1-btn {
@@ -275,8 +282,30 @@
     margin: auto auto auto 1em;
   }
 
-  .left {
-  	margin-left: 95%;
+  .contenedor {
+    text-align: center;
+  }
+
+  #der{
+    margin: -120px auto auto -20px;
+  }
+
+  #izq{
+
+  }
+
+  .pregunta-div{
+    font-size: 20px;
+  }
+
+  .contenedor-div {
+  	height: 330px;
+	  width: auto;
+  }
+
+  #marco {
+    margin: 170px -15px auto auto;
+    width: 95%;
   }
 
   .logo {
@@ -286,6 +315,35 @@
   .logo_image{
     width: 180px;
     height: auto;
+  }
+
+  .registro {
+    font-size: 20px;
+    margin: 5px;
+    width: 95%;
+    max-width: 250px;
+  }
+
+  .youtube {
+    height: 270px;
+    margin: 5px;
+    width: 95%;
+    max-width: 300px;
+    text-align: center;
+  }
+
+  .facebook-btn {
+    background-size: 75% 75%;
+    width: 100%;
+    margin: 0;
+  }
+
+  .codigo-div {
+	  font-size: 22px;
+  }
+
+  .error-txt {
+	  font-size: 22px;
   }
 
 }

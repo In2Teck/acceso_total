@@ -67,14 +67,18 @@ function validaCodigo() {
 			    success: function(data, textStatus, jqXHR) {
 			    	$("#marco-div").fadeOut("slow", function() {
 				    	$("#marco-div").html(data).fadeIn("slow");
+              setTimeout(function() {
+                cambiaPregunta(1);
+              }, 50);
 				  	});
+            
 			    },
 			    error: function() {
 			    } 
 			  });
     	}
     	else {
-    		$(".error-txt").text("EL CÓDIGO NO ES VÁLIDO O YA FUE UTILIZADO EN ESTA PROMOCIÓN. INTENTA NUEVAMENTE CON UNO DIFERENTE.");
+    		$(".error-txt").html("EL CÓDIGO NO ES VÁLIDO O YA FUE UTILIZADO EN ESTA PROMOCIÓN.<br/> INTENTA NUEVAMENTE CON UNO DIFERENTE.");
     	}
     },
     error: function() {
