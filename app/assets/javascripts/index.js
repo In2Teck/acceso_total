@@ -121,8 +121,27 @@ function registraParticipacion() {
         $("#marco-div").fadeOut("slow", function() {
           $("#marco-div").html(data).fadeIn("slow", function(){
             publishEntry();
+            if ($("#amigos_facebook")){
+              var fql_query = "SELECT uid, name FROM user WHERE uid IN (SELECT uid2 FROM friend WHERE uid1 = " + $("#amigos_facebook").data("uid") + ") ORDER BY rand() limit 30"
+              FB.api({
+                  method: 'fql.query',
+                  query: fql_query
+              },
+              function(response){
+                  console.log(response);
+                  if (response[0]) {
+                    $.each(response, function(index, value){
+                      $("#amigos_facebook").append("<img src='https://graph.facebook.com/"+ value.uid+"/picture?type=square' class='thumbnail' />");
+                    });
+                  } else {
+                    alert("Error comunicándonos con Facebook.");
+                  }
+              }); 
+            }else{
+              alert("no facebook");
+            }
           });
-        });
+        }); 
     },
       error: function() {} 
     });

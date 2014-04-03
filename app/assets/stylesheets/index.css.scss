@@ -33,6 +33,13 @@
 	max-width: 120px;
 }
 
+#amigos_facebook {
+  width: 85%;
+  min-height: 134px;
+  background-color: red;
+  margin: 20px auto auto;
+}
+
 .botella {
 	margin: 0;
 	padding: 0;
@@ -195,7 +202,7 @@
 	background: rgba(0,0,0,0.5);
 	border: solid #998452 4px;
 	display: none;
-	height: auto;
+	min-height: 390px;
 	margin: 110px -40px auto auto;
 	width: 730px;
 }
@@ -293,6 +300,11 @@
   border: none;
   cursor: default;
   margin: 10px;
+}
+
+.thumbnail {
+  margin: 0.1em 0.1em;
+  display: inline-block;
 }
 
 @media screen and (max-width: 900px) { 

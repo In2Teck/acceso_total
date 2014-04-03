@@ -3,8 +3,8 @@
 		<div> ¡GRACIAS POR PARTICIPAR! </div>
 		<% if current_user %>
 			<br/>
-			<div class="invita-div"> INVITA A TODOS LOS AMIGOS QUE PUEDAS Y TENDRÁS MÁS OPORTUNIDADES DE GANAR.</div>
-			<br/>
+      <div class="invita-div"> INVITA A TODOS LOS AMIGOS QUE PUEDAS Y TENDRÁS MÁS<br/> OPORTUNIDADES DE GANAR.</div>
+      <div id="amigos_facebook" data-uid="<%= current_user.uid %>"></div>
 			<%= button_tag '', :class => "invitar-btn", :onclick => "invitarAmigos()" %>
 		<% else %>
 			<div> NO TIENE FACEBOOK </div>
