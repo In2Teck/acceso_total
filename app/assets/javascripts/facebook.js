@@ -78,7 +78,7 @@ function publishEntry() {
   FB.ui({
     method: 'feed',
     name: 'ACCESO TOTAL TRADICIONAL®', 
-    description: 'Ya estoy concursando para ir a Cannes, Francia con Cuervo Tradicional® ¡Participa AQUÍ!',
+    description: 'Yo ya estoy participando en Acceso Total por un viaje todo pagado a Cannes, Francia. ¡Tú también atrévete a vivir una experiencia que el dinero no puede comprar!',
     link: 'http://accesototaltradicional.com',
     picture: 'http://apps.t2omedia.com.mx/assets/post_wall.jpg'
   });

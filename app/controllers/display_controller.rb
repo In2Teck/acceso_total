@@ -9,6 +9,16 @@ class DisplayController < ApplicationController
 
   end
 
+  def tab
+  	@signed_request = params[:signed_request]
+    is_fan = (decode_data @signed_request)["page"]["liked"]
+    if is_fan
+    	render 'fan', :layout => 'tab'
+    else
+    	render 'no_fan', :layout => 'tab'
+    end
+  end
+
   def elige_pregunta
   	@code = params[:code]
   	@questions = Question.all()
@@ -71,5 +81,16 @@ class DisplayController < ApplicationController
     end
     return fecha
 	end
+
+	def decode_data str
+    encoded_sig, payload = str.split('.')
+    data = ActiveSupport::JSON.decode base64_url_decode(payload)
+  end
+
+  def base64_url_decode str
+    encoded_str = str.gsub('-','+').gsub('_','/')
+    encoded_str += '=' while !(encoded_str.size % 4).zero?
+    Base64.decode64(encoded_str)
+  end
 
 end

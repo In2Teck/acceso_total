@@ -143,6 +143,6 @@ function registraParticipacion() {
 
 function invitarAmigos() {
   FB.ui({
-    method: 'apprequests', message: 'Participa en Acceso Total de Jose Cuervo Tradicional® para ganar un viaje todo pagado a Cannes, Francia',
+    method: 'apprequests', message: 'Tu amigo te acaba de invitar a ser parte de Acceso Total: Cannes. Aprovecha esta oportunidad y atrévete a vivir una experiencia que el dinero no puede comprar. Ingresa a nuestra página oficial y descubre cómo ganar: http://accesototaltradicional.com',
   }, function(response){console.log(response)});
 }
