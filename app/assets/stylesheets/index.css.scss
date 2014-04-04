@@ -41,6 +41,11 @@
   overflow: hidden;
 }
 
+#amigos_email {
+  width: 85%;
+  margin: 2% auto auto;
+}
+
 .botella {
 	margin: 0;
 	padding: 0;
@@ -57,7 +62,7 @@
 }
 
 .campo-txt {
-	font-size: 20px;
+	font-size: 16px;
 	width: 75%;
   max-width: 300px;
 }
@@ -156,6 +161,7 @@
 .pregunta {
 	font-size: 20px;
 	text-align: center;	
+  width: 95%;
 }
 
 .registro {
@@ -321,6 +327,10 @@
     opacity: 1;
 }
  
+.titulo_gracias {
+  font-size: 35px;
+}
+
 @media screen and (max-width: 900px) { 
 
   .age-check {
@@ -406,6 +416,17 @@
     height: 41px;
   }
 
+  .invita-div {
+  	font-size: 20px;
+  }
+
+  .campo-txt {
+	  font-size: 12px;
+  }
+
+  .titulo_gracias {
+    font-size: 26px;
+  }
 }
 
 @media screen and (max-width:400px) {

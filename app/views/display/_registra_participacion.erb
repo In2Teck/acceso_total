@@ -1,13 +1,17 @@
 <div class="contenedor-div">
 	<div class="participacion-div">
-		<div> ¡GRACIAS POR PARTICIPAR! </div>
+		<div class="titulo_gracias"> ¡GRACIAS POR PARTICIPAR! </div>
+	  <br/>
+    <div class="invita-div"> INVITA A TODOS LOS AMIGOS QUE PUEDAS Y TENDRÁS MÁS<br/> OPORTUNIDADES DE GANAR.<br/></div>
 		<% if current_user %>
-			<br/>
-      <div class="invita-div"> INVITA A TODOS LOS AMIGOS QUE PUEDAS Y TENDRÁS MÁS<br/> OPORTUNIDADES DE GANAR.</div>
       <div id="amigos_facebook" data-uid="<%= current_user.uid %>"></div>
 			<%= button_tag '', :class => "invitar-btn", :onclick => "invitarAmigos()" %>
 		<% else %>
-			<div> NO TIENE FACEBOOK </div>
+      <div id="amigos_email">
+        <div class="invita-div"> ESCRIBE SUS CORREOS SEPARADOS POR UNA COMA.<br/><br/></div>
+        <%= text_area_tag "email_list", nil, class: "campo-txt", placeholder: "Ej: a08@gmail.com, ben_34@hotmail.com", rows: "3"%>
+      </div>
+			<%= button_tag '', :class => "invitar-btn", :onclick => "invitarAmigosEmail()" %>
 		<% end %>
 	</div>
 </div>

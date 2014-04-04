@@ -30,6 +30,7 @@ AccesoTotal::Application.routes.draw do
   match 'registra_participacion' => "display#registra_participacion", :as => :registra_participacion 
   match 'registra_codigo' => "display#registra_codigo", :as => :registra_codigo 
   match 'tab' => "display#tab", :as => :tab
+  match 'invita_email' => "display#invita_email", :as => :invita_email
 
   match 'find_or_create_user' => "users#find_or_create_user", :as => :find_or_create_user
   match 'validate_bottle' => "bottles#validate_bottle", :as => :validate_bottle

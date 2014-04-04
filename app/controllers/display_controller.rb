@@ -34,6 +34,14 @@ class DisplayController < ApplicationController
   	@participacion.save
   	render :partial => 'registra_participacion', :content_type => 'text/html'
   end
+
+  def invita_email
+    emails = params[:emails]
+    emails.each do |email|
+      #mandar correo
+    end    
+  	render :partial => 'invita_email', :content_type => 'text/html'
+  end
   
 	def valida_edad
 		day = params[:dia].to_i

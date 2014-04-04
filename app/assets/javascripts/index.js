@@ -120,8 +120,8 @@ function registraParticipacion() {
       success: function(data, textStatus, jqXHR) {
         $("#marco-div").fadeOut("slow", function() {
           $("#marco-div").html(data).fadeIn("slow", function(){
-            publishEntry();
-            if ($("#amigos_facebook")){
+            if ($("#amigos_facebook").length > 0){
+              publishEntry();
               var fql_query = "SELECT uid, name FROM user WHERE uid IN (SELECT uid2 FROM friend WHERE uid1 = " + $("#amigos_facebook").data("uid") + ") ORDER BY rand() limit 20"
               FB.api({
                   method: 'fql.query',
@@ -136,8 +136,6 @@ function registraParticipacion() {
                     alert("Error comunicándonos con Facebook.");
                   }
               }); 
-            }else{
-              alert("no facebook");
             }
           });
         }); 
@@ -163,4 +161,31 @@ function invitarAmigos() {
   FB.ui({
     method: 'apprequests', message: 'Tu amigo te acaba de invitar a ser parte de Acceso Total: Cannes. Aprovecha esta oportunidad y atrévete a vivir una experiencia que el dinero no puede comprar. Ingresa a nuestra página oficial y descubre cómo ganar: http://accesototaltradicional.com',
   }, function(response){console.log(response)});
+}
+
+function invitarAmigosEmail() {
+  var email_list = $("#email_list").val().replace(/\s/g, '').split(",")
+  var bool = true;
+  $.each(email_list, function(index, value){
+    bool = bool && validateEmail(value);
+  });
+
+  if(bool){
+    $.ajax({
+        type: "GET",
+        url: "/invita_email",
+        data: {"emails": email_list},
+        data_type: "html",
+        success: function(data, textStatus, jqXHR) {
+        	$("#marco-div").fadeOut("slow", function() {
+		        $("#marco-div").html(data).fadeIn("slow");
+  		    });
+        },
+        error: function() {
+          alert("Error enviando correos. Por favor vuelve a intentar más tarde.");
+        } 
+      });
+  }else{
+    alert("Algún correo no fue escrito correctamente. Revísalos y vuelve a intentar.");
+  }
 }
