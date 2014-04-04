@@ -10,6 +10,7 @@ gem 'devise', '2.2.4'
 gem 'omniauth-facebook', '1.4.0'
 gem 'cancan'
 gem 'will_paginate'
+gem 'mail', '2.4.4'
 
 # Gems used only for assets and not required
 # in production environments by default.
