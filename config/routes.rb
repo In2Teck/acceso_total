@@ -1,4 +1,7 @@
 AccesoTotal::Application.routes.draw do
+  resources :mail_users
+
+
   resources :participations
 
 
@@ -38,6 +41,8 @@ AccesoTotal::Application.routes.draw do
   match 'admin' => 'admin#index', :as => :admin
 
   match 'admin/logout', :to => "admin#logout", :as => :admin_logout
+  
+  match 'mail_users' => "mail_user", :as => :mail_users
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
