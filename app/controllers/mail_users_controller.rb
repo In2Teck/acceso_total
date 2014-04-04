@@ -44,7 +44,6 @@ class MailUsersController < ApplicationController
 	
     respond_to do |format|
       if @mail_user.save
-		UserMailer.registration_confirmation(@mail_user).deliver
         format.html { redirect_to @mail_user, notice: 'Mail user was successfully created.' }
         format.json { render json: @mail_user, status: :created, location: @mail_user }
       else
