@@ -35,9 +35,10 @@
 
 #amigos_facebook {
   width: 85%;
+  height: 149px;
   min-height: 134px;
-  background-color: red;
   margin: 20px auto auto;
+  overflow: hidden;
 }
 
 .botella {
@@ -302,11 +303,24 @@
   margin: 10px;
 }
 
-.thumbnail {
-  margin: 0.1em 0.1em;
+.img_wrapper{
+  overflow: hidden;
   display: inline-block;
 }
 
+.img_wrapper img {
+  opacity: 0;
+  margin: 0.1em 0.1em;
+  height: 50px;
+  width: 50px;
+  border: solid white 1px;
+  transition: opacity 150ms;
+}
+
+.img_wrapper.loaded img{
+    opacity: 1;
+}
+ 
 @media screen and (max-width: 900px) { 
 
   .age-check {
