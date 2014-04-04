@@ -165,6 +165,8 @@ function invitarAmigos() {
 
 function invitarAmigosEmail() {
   var email_list = $("#email_list").val().replace(/\s/g, '').split(",")
+	var curerent_user_email = $("#user").data("id");   
+    
   var bool = true;
   $.each(email_list, function(index, value){
     bool = bool && validateEmail(value);
@@ -174,7 +176,7 @@ function invitarAmigosEmail() {
     $.ajax({
         type: "GET",
         url: "/invita_email",
-        data: {"emails": email_list},
+        data: {"emails": email_list, "current_user_email": curerent_user_email},
         data_type: "html",
         success: function(data, textStatus, jqXHR) {
         	$("#marco-div").fadeOut("slow", function() {

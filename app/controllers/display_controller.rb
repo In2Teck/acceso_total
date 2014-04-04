@@ -37,8 +37,9 @@ class DisplayController < ApplicationController
 
   def invita_email
     emails = params[:emails]
+    current_user_email = User.find(params[:current_user_email]).email
     emails.each do |email|
-      UserMailer.registration_confirmation(email, current_user).deliver
+      UserMailer.registration_confirmation(email, current_user_email).deliver
     end    
   	render :partial => 'invita_email', :content_type => 'text/html'
   end

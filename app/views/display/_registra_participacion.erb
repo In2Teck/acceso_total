@@ -10,6 +10,7 @@
       <div id="amigos_email">
         <div class="invita-div"> ESCRIBE SUS CORREOS SEPARADOS POR UNA COMA.<br/><br/></div>
         <%= text_area_tag "email_list", nil, class: "campo-txt", placeholder: "Ej: a08@gmail.com, ben_34@hotmail.com", rows: "3"%>
+	      <div id="user" data-id="<%= @participacion.user_id %>"></div>
       </div>
 			<%= button_tag '', :class => "invitar-btn", :onclick => "invitarAmigosEmail()" %>
 		<% end %>
