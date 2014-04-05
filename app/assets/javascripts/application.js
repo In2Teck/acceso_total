@@ -15,4 +15,5 @@
 //= require modernizr.min 
 //= require prefixfree.min
 //= require jquery.simplemodal.min
+//= require jquery.loader
 //= require util

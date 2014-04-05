@@ -173,6 +173,7 @@ function invitarAmigosEmail() {
   });
 
   if(bool){
+    $.loader({className:"animated-loader", content:""});
     $.ajax({
         type: "GET",
         url: "/invita_email",
@@ -185,6 +186,10 @@ function invitarAmigosEmail() {
         },
         error: function() {
           alert("Error enviando correos. Por favor vuelve a intentar más tarde.");
+        },
+        complete: function(){
+          $("#jquery-loader-background").remove();
+          $("#jquery-loader").remove(); 
         } 
       });
   }else{

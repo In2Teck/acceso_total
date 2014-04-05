@@ -349,7 +349,22 @@
   font-size: 35px;
 }
 
+#jquery-loader.animated-loader{
+    border:none;
+    padding-top:35px;
+    background-color: transparent;
+    text-align: center;
+    background-image: url("ajax-loader.gif");
+    background-position: center center;
+    background-repeat: no-repeat;
+}
+
 @media screen and (max-width: 900px) { 
+
+  #amigos_facebook {
+    height: 130px;
+    min-height: 130px;
+  }
 
   .age-check {
   	font-size: 1.8em;
