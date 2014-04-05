@@ -133,7 +133,15 @@ function registraParticipacion() {
                       $("#amigos_facebook").append("<div class='img_wrapper'><img src='https://graph.facebook.com/"+ value.uid+"/picture?type=square' class='thumbnail' onload='imgLoaded(this)'/></div>");
                     });
                   } else {
-                    alert("Error comunicándonos con Facebook.");
+                     $('<div id="dialog_1" title="Error"><p>La comunicación con Facebook no se pudo realizar.</p></div>').appendTo('body');    	
+                      $("#dialog_1").dialog({
+                            width: 300,
+                            height: 150,
+                            modal: true,
+                            close: function(event, ui) {
+                                $("#dialog_1").hide();
+                            }
+                      });
                   }
               }); 
             }
@@ -143,17 +151,15 @@ function registraParticipacion() {
       error: function() {} 
     });
   } else {
-    alert("Favor de llenar el campo de respuesta.");
-    /*$('<div id="dialog" title="Atención"><p>Favor de llenar el campo de respuesta.</p></div>').appendTo('body');    	
-
-		$("#dialog").dialog({
+    $('<div id="dialog_2" title="Atención"><p>Favor de llenar el campo de respuesta.</p></div>').appendTo('body');    	
+		$("#dialog_2").dialog({
             width: 300,
             height: 150,
             modal: true,
             close: function(event, ui) {
-                $("#dialog").hide();
+                $("#dialog_2").hide();
             }
-    });*/
+    });
   }
 }
 
@@ -185,7 +191,15 @@ function invitarAmigosEmail() {
   		    });
         },
         error: function() {
-          alert("Error enviando correos. Por favor vuelve a intentar más tarde.");
+          $('<div id="dialog_3" title="Error enviando correos"><p>Por favor vuelve a intentar más tarde.</p></div>').appendTo('body');    	
+          $("#dialog_3").dialog({
+                  width: 300,
+                  height: 150,
+                  modal: true,
+                  close: function(event, ui) {
+                      $("#dialog_3").hide();
+                  }
+          });
         },
         complete: function(){
           $("#jquery-loader-background").remove();
@@ -193,6 +207,14 @@ function invitarAmigosEmail() {
         } 
       });
   }else{
-    alert("Algún correo no fue escrito correctamente. Revísalos y vuelve a intentar.");
+    $('<div id="dialog_4" title="Atención"><p>Algún correo no fue escrito correctamente. Revísalos y vuelve a intentar.</p></div>').appendTo('body');	
+		$("#dialog_4").dialog({
+            width: 300,
+            height: 150,
+            modal: true,
+            close: function(event, ui) {
+                $("#dialog_4").hide();
+            }
+    });
   }
 }

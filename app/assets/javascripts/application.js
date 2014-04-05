@@ -16,4 +16,5 @@
 //= require prefixfree.min
 //= require jquery.simplemodal.min
 //= require jquery.loader
+//= require jquery.ui.all
 //= require util
