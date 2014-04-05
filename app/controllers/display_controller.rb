@@ -1,4 +1,6 @@
 class DisplayController < ApplicationController
+  
+  authorize_resource :class => false
 	
   #ROOT
   def index

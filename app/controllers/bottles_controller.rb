@@ -1,4 +1,7 @@
 class BottlesController < ApplicationController
+
+  load_and_authorize_resource
+
   # GET /bottles
   # GET /bottles.json
   def index

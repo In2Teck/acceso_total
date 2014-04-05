@@ -4,12 +4,14 @@ class Ability
   def initialize(user)
 	  user ||= User.new # guest user
     if user.role? :admin
-      #can :manage, :all
-	  else
       can :manage, :all
-		  #can :read, :all
-      #can :find_or_create_user, User
-      #can :validate_bottle, Bottle
+	  else
+		  can :read, :all
+		  can :manage, :display
+      can [:find_or_create_user, :get_participations], User
+      can :validate_bottle, Bottle
+      can :create, Participation 
+      cannot :manage, :admin
 	  end
   end
 end
