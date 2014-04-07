@@ -47,16 +47,15 @@
 }
 
 .botella {
-	margin: 0;
+	margin: 160px 0 0 0;
 	padding: 0;
 }
 
 .botella img{
-  height: 800px;
+  height: 675px;
 }
 
 .caja2x2	{
-	/*border: solid red 1px;*/
 	height: auto;
 	width: auto;
 }
@@ -75,7 +74,6 @@
 }
 
 .contenedor {
-	/*border: solid black 1px;*/
 	font-size: 0;
 	height: auto;
 	top: 10px;
@@ -144,6 +142,10 @@
 	margin: 2.5em auto auto 10%;
 }
 
+.logo_image {
+  margin-right: 39%;
+}
+
 .participacion-div {
 	font-size: 35px;
 	margin: auto;
@@ -210,7 +212,7 @@
 	border: solid #998452 4px;
 	display: none;
 	min-height: 390px;
-	margin: 110px -40px auto auto;
+	margin: 180px -40px auto auto;
 	width: 730px;
 }
 
@@ -403,9 +405,15 @@
 	  margin: 2.5em auto auto 10px;
   }
 
-  .logo_image{
-    width: 180px;
+  .logo_image {
     height: auto;
+    margin-right: 50%;
+    width: 180px;
+  }
+
+  .logo_tradi {
+    height: auto;
+    width: 180px;
   }
 
   .registro {
@@ -471,4 +479,7 @@
     min-width: 178px;
   }
 
+  .logo_image {
+    margin-right: 0;
+  }
 }
